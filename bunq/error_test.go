@@ -20,7 +20,7 @@ func TestErrorResponse(t *testing.T) {
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	c := NewClient(ctx, fmt.Sprintf("%s/v1/", fakeServer.URL), key, "")
+	c := NewClient(ctx, fmt.Sprintf("%s/v1/", fakeServer.URL), key, "", "")
 
 	_, err = c.installation.create()
 	assert.NoError(t, err)

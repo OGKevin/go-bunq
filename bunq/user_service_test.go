@@ -15,7 +15,7 @@ func TestGetUserPerson(t *testing.T) {
 
 	assert.NoError(t, c.Init())
 
-	r, err := c.userService.GetUserPerson()
+	r, err := c.UserService.GetUserPerson()
 
 	assert.NoError(t, err)
 	assert.NotZero(t, r.Response[0].UserPerson.ID)
@@ -40,7 +40,7 @@ func TestUpdateUserPerson(t *testing.T) {
 		},
 	}
 
-	res, err := c.userService.UpdateUserPerson(bod)
+	res, err := c.UserService.UpdateUserPerson(bod)
 
 	assert.NoError(t, err)
 	assert.NotZero(t, res.Response[0].ID.ID)

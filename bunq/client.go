@@ -65,6 +65,7 @@ type Client struct {
 	baseURL string
 	apiKey  string
 	Debug   bool
+	description string
 
 	Err error
 
@@ -91,10 +92,10 @@ type Client struct {
 	installation   *installationService
 	deviceServer   *deviceServerService
 	sessionServer  *sessionServerService
-	userService    *userService
+	UserService    *userService
 	AccountService *accountService
 	PaymentService *paymentService
-	cardService    *cardService
+	CardService    *cardService
 	ContentService *contentService
 }
 
@@ -113,7 +114,7 @@ func NewClientFromContext(ctx context.Context, clientCtx *ClientContext) (*Clien
 
 	serverPubKey := parseResult.(*rsa.PublicKey)
 
-	c := NewClient(ctx, clientCtx.BaseURL, privateKey, clientCtx.APIKey)
+	c := NewClient(ctx, clientCtx.BaseURL, privateKey, clientCtx.APIKey, "")
 	c.apiKey = clientCtx.APIKey
 	c.baseURL = clientCtx.BaseURL
 
@@ -129,11 +130,12 @@ func NewClientFromContext(ctx context.Context, clientCtx *ClientContext) (*Clien
 }
 
 // NewClient create a new bunq client to use.
-func NewClient(ctx context.Context, url string, key *rsa.PrivateKey, apikey string) *Client {
+func NewClient(ctx context.Context, url string, key *rsa.PrivateKey, apikey, description string) *Client {
 	c := Client{}
 	c.ctx = ctx
 	c.Client = http.DefaultClient
 	c.baseURL = url
+	c.description = description
 
 	c.apiKey = apikey
 	c.privateKey = key
@@ -164,10 +166,10 @@ func (c *Client) registerServices() {
 	c.installation = (*installationService)(&c.common)
 	c.deviceServer = (*deviceServerService)(&c.common)
 	c.sessionServer = (*sessionServerService)(&c.common)
-	c.userService = (*userService)(&c.common)
+	c.UserService = (*userService)(&c.common)
 	c.PaymentService = (*paymentService)(&c.common)
 	c.AccountService = (*accountService)(&c.common)
-	c.cardService = (*cardService)(&c.common)
+	c.CardService = (*cardService)(&c.common)
 	c.ContentService = (*contentService)(&c.common)
 
 	c.spawnRequestHandlerWorker()

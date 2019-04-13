@@ -10,7 +10,7 @@ type deviceServerService service
 
 func (d *deviceServerService) create() (*responseDeviceServer, error) {
 	bodyStruct := requestDeviceServer{
-		Description:  "OGKevin's automation system",
+		Description:  d.client.description,
 		Secret:       d.client.apiKey,
 		PermittedIps: []string{},
 	}

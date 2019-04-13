@@ -97,7 +97,7 @@ func createClientWithFakeServer(t *testing.T) (*Client, *httptest.Server, contex
 		t.Fatal(err)
 	}
 	ctx, cancel := context.WithCancel(context.Background())
-	c := NewClient(ctx, fmt.Sprintf("%s/v1/", fakeServer.URL), key, "")
+	c := NewClient(ctx, fmt.Sprintf("%s/v1/", fakeServer.URL), key, "", "")
 
 	return c, fakeServer, cancel
 }

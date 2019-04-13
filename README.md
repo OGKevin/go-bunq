@@ -23,7 +23,7 @@ func main() {
 
   ctx, cancel := context.WithCancel(context.Background())
   defer cancel()
-  c := bunq.NewClient(ctx, bunq.BaseURLSandbox, key, "sandbox_ab7df7985a66133b1abecf42871801edaafe5bc51ef9769f5a032876")
+  c := bunq.NewClient(ctx, bunq.BaseURLSandbox, key, "sandbox_ab7df7985a66133b1abecf42871801edaafe5bc51ef9769f5a032876", "My awesome app")
   err = c.Init()
   if err != nil {
       panic(err)

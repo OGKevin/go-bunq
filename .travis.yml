@@ -26,6 +26,6 @@ before_install:
   - export TAG=$(if [ -n "$TRAVIS_TAG" ]; then echo $TRAVIS_TAG; else echo $BRANCH;
     fi)
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH, TAG=$TAG"
+  - export GO111MODULE=on
 script:
-  - env GO111MODULE=on go test ./... --count 1 --parallel 50
-
+  - env go test ./... --count 1 --parallel 50

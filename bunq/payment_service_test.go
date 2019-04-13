@@ -25,7 +25,7 @@ func ExamplePaymentService_CreateBatchPayment() {
 	for i := 0; i < 20; i++ {
 		log.Print(i)
 
-		_, err = c.PaymentService.createPaymentBatch(
+		_, err = c.PaymentService.CreatePaymentBatch(
 			10111,
 			PaymentBatchCreate{
 				Payments: generateBatchEntries(100),
@@ -99,7 +99,7 @@ func TestDraftPaymentUpdate(t *testing.T) {
 		requestUpdateDraftPayment{
 			requestCreateDraftPayment: requestCreateDraftPayment{
 				Entries: append(allDraftPaymentEntry, draftPaymentEntryCreate{
-					Amount: amount{
+					Amount: Amount{
 						Currency: "EUR",
 						Value:    "1",
 					},
@@ -127,7 +127,7 @@ func createNewDraftPayment(c *Client) (*responseBunqID, error) {
 		requestCreateDraftPayment{
 			Entries: []draftPaymentEntryCreate{
 				{
-					Amount: amount{
+					Amount: Amount{
 						Currency: "EUR",
 						Value:    "1",
 					},
@@ -150,7 +150,7 @@ func generateBatchEntries(nr int) []PaymentCreate {
 		entries = append(
 			entries,
 			PaymentCreate{
-				Amount: amount{
+				Amount: Amount{
 					Currency: "EUR",
 					Value:    "0.01",
 				},

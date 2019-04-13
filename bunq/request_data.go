@@ -30,7 +30,7 @@ type requestUpdateDraftPayment struct {
 }
 
 type draftPaymentEntryCreate struct {
-	Amount            amount  `json:"amount,omitempty"`
+	Amount            Amount  `json:"Amount,omitempty"`
 	CounterpartyAlias Pointer `json:"counterparty_alias,omitempty"`
 	Description       string  `json:"description,omitempty"`
 	MerchantReference *string `json:"merchant_reference,omitempty"`
@@ -41,7 +41,7 @@ type PaymentBatchCreate struct {
 }
 
 type PaymentCreate struct {
-	Amount            amount  `json:"amount"`
+	Amount            Amount  `json:"Amount"`
 	CounterpartyAlias Pointer `json:"counterparty_alias"`
 	Description       string  `json:"description"`
 	AllowBunqto       bool    `json:"allow_bunqto"`

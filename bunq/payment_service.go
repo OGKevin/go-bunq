@@ -104,7 +104,7 @@ func (p *paymentService) GetAllOlderPayment(pagi Pagination) (*ResponsePaymentGe
 	return &resStruct, p.client.parseResponse(res, &resStruct)
 }
 
-func (p *paymentService) createPaymentBatch(monetaryAccountID int, create PaymentBatchCreate) (*responseBunqID, error) {
+func (p *paymentService) CreatePaymentBatch(monetaryAccountID int, create PaymentBatchCreate) (*responseBunqID, error) {
 	userID, err := p.client.GetUserID()
 	if err != nil {
 		return nil, err

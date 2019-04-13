@@ -16,7 +16,7 @@ func ExamplePaymentService_CreateBatchPayment() {
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	c := NewClient(ctx, BaseURLSandbox, key, "sandbox_ab7df7985a66133b1abecf42871801edaafe5bc51ef9769f5a032876")
+	c := NewClient(ctx, BaseURLSandbox, key, "sandbox_ab7df7985a66133b1abecf42871801edaafe5bc51ef9769f5a032876", "My awesome app")
 	err = c.Init()
 	if err != nil {
 		panic(err)

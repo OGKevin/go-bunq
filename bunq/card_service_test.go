@@ -14,7 +14,7 @@ func TestCardService_GetMasterCardAction(t *testing.T) {
 
 	assert.NoError(t, c.Init())
 
-	res, err := c.cardService.GetMasterCardAction(324, 9520)
+	res, err := c.CardService.GetMasterCardAction(324, 9520)
 
 	assert.NoError(t, err)
 	assert.NotZero(t, res.Response[0].MasterCardAction.ID)

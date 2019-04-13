@@ -1,0 +1,209 @@
+{
+  "Response": [
+    {
+      "Payment": {
+        "id": 261172,
+        "created": "2018-12-28 20:45:27.518825",
+        "updated": "2018-12-28 20:45:27.518825",
+        "monetary_account_id": 10111,
+        "amount": {
+          "currency": "EUR",
+          "value": "500.00"
+        },
+        "description": "",
+        "type": "BUNQ",
+        "merchant_reference": null,
+        "alias": {
+          "iban": "NL88BUNQ9900109384",
+          "is_light": false,
+          "display_name": "Beattie",
+          "avatar": {
+            "uuid": "7c2b4e13-f5e5-4cc2-9c37-a95371271d2f",
+            "image": [
+              {
+                "attachment_public_uuid": "f9a1a89a-fdc1-4de5-89d5-e477cccd22c4",
+                "height": 1024,
+                "width": 1024,
+                "content_type": "image\/png"
+              }
+            ],
+            "anchor_uuid": null
+          },
+          "label_user": {
+            "uuid": "1aedf531-f020-4c04-a5e3-f941338828d7",
+            "display_name": "Beattie",
+            "country": "NL",
+            "avatar": {
+              "uuid": "c7833be8-6254-4732-94f6-905571675b44",
+              "image": [
+                {
+                  "attachment_public_uuid": "ddf892cd-95f2-4936-a456-c23f51ab985b",
+                  "height": 126,
+                  "width": 200,
+                  "content_type": "image\/jpeg"
+                }
+              ],
+              "anchor_uuid": "1aedf531-f020-4c04-a5e3-f941338828d7"
+            },
+            "public_nick_name": "Elliot"
+          },
+          "country": "NL"
+        },
+        "counterparty_alias": {
+          "iban": "NL65BUNQ9900000188",
+          "is_light": false,
+          "display_name": "S. Daddy",
+          "avatar": {
+            "uuid": "6acf697a-70ce-41c9-964e-7cadf71ed2c7",
+            "image": [
+              {
+                "attachment_public_uuid": "894bd6df-307e-4596-bacc-265146018ba1",
+                "height": 1024,
+                "width": 1024,
+                "content_type": "image\/png"
+              }
+            ],
+            "anchor_uuid": null
+          },
+          "label_user": {
+            "uuid": "caf2f932-da65-402c-baaf-86fb1aa101d1",
+            "display_name": "S. Daddy",
+            "country": "NL",
+            "avatar": {
+              "uuid": "3fbdafdd-091c-4a4c-a05f-7b60b403d643",
+              "image": [
+                {
+                  "attachment_public_uuid": "0daad054-c382-4cd9-bdc7-8eb85e2541a8",
+                  "height": 480,
+                  "width": 480,
+                  "content_type": "image\/jpeg"
+                }
+              ],
+              "anchor_uuid": "caf2f932-da65-402c-baaf-86fb1aa101d1"
+            },
+            "public_nick_name": "Sugar (nickname)"
+          },
+          "country": "NL"
+        },
+        "attachment": [],
+        "geolocation": null,
+        "batch_id": null,
+        "allow_chat": true,
+        "scheduled_id": null,
+        "address_billing": null,
+        "address_shipping": null,
+        "sub_type": "REQUEST",
+        "request_reference_split_the_bill": [],
+        "balance_after_mutation": {
+          "currency": "EUR",
+          "value": "500.00"
+        }
+      }
+    },
+    {
+      "Payment": {
+        "id": 261173,
+        "created": "2018-12-28 20:45:27.518825",
+        "updated": "2018-12-28 20:45:27.518825",
+        "monetary_account_id": 10111,
+        "amount": {
+          "currency": "EUR",
+          "value": "-300.00"
+        },
+        "description": "",
+        "type": "BUNQ",
+        "merchant_reference": null,
+        "alias": {
+          "iban": "NL88BUNQ9900109384",
+          "is_light": false,
+          "display_name": "Beattie",
+          "avatar": {
+            "uuid": "7c2b4e13-f5e5-4cc2-9c37-a95371271d2f",
+            "image": [
+              {
+                "attachment_public_uuid": "f9a1a89a-fdc1-4de5-89d5-e477cccd22c4",
+                "height": 1024,
+                "width": 1024,
+                "content_type": "image\/png"
+              }
+            ],
+            "anchor_uuid": null
+          },
+          "label_user": {
+            "uuid": "1aedf531-f020-4c04-a5e3-f941338828d7",
+            "display_name": "Beattie",
+            "country": "NL",
+            "avatar": {
+              "uuid": "c7833be8-6254-4732-94f6-905571675b44",
+              "image": [
+                {
+                  "attachment_public_uuid": "ddf892cd-95f2-4936-a456-c23f51ab985b",
+                  "height": 126,
+                  "width": 200,
+                  "content_type": "image\/jpeg"
+                }
+              ],
+              "anchor_uuid": "1aedf531-f020-4c04-a5e3-f941338828d7"
+            },
+            "public_nick_name": "Elliot"
+          },
+          "country": "NL"
+        },
+        "counterparty_alias": {
+          "iban": "NL65BUNQ9900000189",
+          "is_light": false,
+          "display_name": "S. Daddy",
+          "avatar": {
+            "uuid": "6acf697a-70ce-41c9-964e-7cadf71ed2c7",
+            "image": [
+              {
+                "attachment_public_uuid": "894bd6df-307e-4596-bacc-265146018ba1",
+                "height": 1024,
+                "width": 1024,
+                "content_type": "image\/png"
+              }
+            ],
+            "anchor_uuid": null
+          },
+          "label_user": {
+            "uuid": "caf2f932-da65-402c-baaf-86fb1aa101d1",
+            "display_name": "S. Daddy",
+            "country": "NL",
+            "avatar": {
+              "uuid": "3fbdafdd-091c-4a4c-a05f-7b60b403d643",
+              "image": [
+                {
+                  "attachment_public_uuid": "0daad054-c382-4cd9-bdc7-8eb85e2541a8",
+                  "height": 480,
+                  "width": 480,
+                  "content_type": "image\/jpeg"
+                }
+              ],
+              "anchor_uuid": "caf2f932-da65-402c-baaf-86fb1aa101d1"
+            },
+            "public_nick_name": "Sugar (nickname)"
+          },
+          "country": "NL"
+        },
+        "attachment": [],
+        "geolocation": null,
+        "batch_id": null,
+        "allow_chat": true,
+        "scheduled_id": null,
+        "address_billing": null,
+        "address_shipping": null,
+        "sub_type": "REQUEST",
+        "request_reference_split_the_bill": [],
+        "balance_after_mutation": {
+          "currency": "EUR",
+          "value": "500.00"
+        }
+      }
+    }
+  ],
+  "Pagination": {
+    "future_url": "\/v1\/user\/7082\/monetary-account\/10111\/payment?newer_id=261172",
+    "newer_url": null,
+    "older_url": "\/v1\/user\/7082\/monetary-account\/10111\/payment?older_id=261172"
+  }
+}

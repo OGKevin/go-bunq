@@ -114,7 +114,7 @@ type ubo struct {
 	Nationality string `json:"nationality"`
 }
 
-type dailyLimitWithoutConfirmationLogin amount
+type dailyLimitWithoutConfirmationLogin Amount
 
 type notificationFilter struct {
 	NotificationDeliveryMethod string `json:"notification_delivery_method"`
@@ -171,11 +171,11 @@ type customerLimit struct {
 	LimitCardDebitWildcard        int    `json:"limit_card_debit_wildcard"`
 	LimitCardDebitReplacement     int    `json:"limit_card_debit_replacement"`
 	LimitInviteUserPremiumLimited int    `json:"limit_invite_user_premium_limited"`
-	LimitAmountMonthly            amount `json:"limit_amount_monthly"`
-	SpentAmountMonthly            amount `json:"spent_amount_monthly"`
+	LimitAmountMonthly            Amount `json:"limit_amount_monthly"`
+	SpentAmountMonthly            Amount `json:"spent_amount_monthly"`
 }
 
-type amount struct {
+type Amount struct {
 	Value    string `json:"value"`
 	Currency string `json:"currency"`
 }
@@ -238,11 +238,11 @@ type MonetaryAccountBank struct {
 	common
 	Alias                  []Pointer              `json:"alias"`
 	Avatar                 avatar                 `json:"avatar"`
-	Balance                amount                 `json:"balance"`
+	Balance                Amount                 `json:"balance"`
 	Country                string                 `json:"country"`
 	Currency               string                 `json:"currency"`
-	DailyLimit             amount                 `json:"daily_limit"`
-	DailySpent             amount                 `json:"daily_spent"`
+	DailyLimit             Amount                 `json:"daily_limit"`
+	DailySpent             Amount                 `json:"daily_spent"`
 	Description            string                 `json:"description"`
 	PublicUUID             string                 `json:"public_uuid"`
 	Status                 string                 `json:"status"`
@@ -252,7 +252,7 @@ type MonetaryAccountBank struct {
 	MonetaryAccountProfile monetaryAccountProfile `json:"monetary_account_profile"`
 	NotificationFilters    []notificationFilter   `json:"notification_filters"`
 	Setting                monetaryAccountSetting `json:"setting"`
-	OverdraftLimit         amount                 `json:"overdraft_limit"`
+	OverdraftLimit         Amount                 `json:"overdraft_limit"`
 }
 
 // GetIBANPointer returns the IBAN Pointer for the given MA.
@@ -274,7 +274,7 @@ type monetaryAccountProfile struct {
 	ProfileFill           interface{} `json:"profile_fill"`
 	ProfileDrain          interface{} `json:"profile_drain"`
 	ProfileActionRequired string      `json:"profile_action_required"`
-	ProfileAmountRequired amount      `json:"profile_amount_required"`
+	ProfileAmountRequired Amount      `json:"profile_amount_required"`
 }
 
 type monetaryAccountSetting struct {
@@ -304,7 +304,7 @@ type labelUser struct {
 }
 
 type draftPaymentEntry struct {
-	Amount            amount                      `json:"amount"`
+	Amount            Amount                      `json:"Amount"`
 	Alias             LabelMonetaryAccount        `json:"alias"`
 	CounterpartyAlias LabelMonetaryAccount        `json:"counterparty_alias"`
 	Description       string                      `json:"description"`
@@ -335,22 +335,22 @@ type Pagination struct {
 
 type masterCardAction struct {
 	common
-	MonetaryAccountID             int           `json:"monetary_account_id"`
-	CardID                        int           `json:"card_id"`
-	CardAuthorisationIDResponse   string        `json:"card_authorisation_id_response"`
-	AmountLocal                   amount        `json:"amount_local"`
-	AmountConverted               amount        `json:"amount_converted"`
-	AmountBilling                 amount        `json:"amount_billing"`
-	AmountOriginalLocal           amount        `json:"amount_original_local"`
-	AmountOriginalBilling         amount        `json:"amount_original_billing"`
-	AmountFee                     amount        `json:"amount_fee"`
-	Decision                      string        `json:"decision"`
-	DecisionDescription           string        `json:"decision_description"`
-	DecisionDescriptionTranslated string        `json:"decision_description_translated"`
-	Description                   string        `json:"description"`
-	AuthorisationStatus           string        `json:"authorisation_status"`
-	AuthorisationType             string        `json:"authorisation_type"`
-	SettlementStatus              string        `json:"settlement_status"`
+	MonetaryAccountID             int    `json:"monetary_account_id"`
+	CardID                        int    `json:"card_id"`
+	CardAuthorisationIDResponse   string `json:"card_authorisation_id_response"`
+	AmountLocal                   Amount `json:"amount_local"`
+	AmountConverted               Amount `json:"amount_converted"`
+	AmountBilling                 Amount `json:"amount_billing"`
+	AmountOriginalLocal           Amount `json:"amount_original_local"`
+	AmountOriginalBilling         Amount `json:"amount_original_billing"`
+	AmountFee                     Amount `json:"amount_fee"`
+	Decision                      string `json:"decision"`
+	DecisionDescription           string `json:"decision_description"`
+	DecisionDescriptionTranslated string `json:"decision_description_translated"`
+	Description                   string `json:"description"`
+	AuthorisationStatus           string `json:"authorisation_status"`
+	AuthorisationType             string `json:"authorisation_type"`
+	SettlementStatus              string `json:"settlement_status"`
 	City                          string        `json:"city"`
 	Alias                         labelUser     `json:"alias"`
 	CounterpartyAlias             labelUser     `json:"counterparty_alias"`
@@ -363,7 +363,7 @@ type masterCardAction struct {
 	SecureCodeID                  int           `json:"secure_code_id"`
 	WalletProviderID              string        `json:"wallet_provider_id"`
 	RequestReferenceSplitTheBill  []interface{} `json:"request_reference_split_the_bill"`
-	AppliedLimit                  string        `json:"applied_limit"`
+	AppliedLimit                  string `json:"applied_limit"`
 }
 
 type labelCard struct {
@@ -380,11 +380,11 @@ type MonetaryAccountSaving struct {
 	common
 	Alias                  []Pointer              `json:"alias"`
 	Avatar                 avatar                 `json:"avatar"`
-	Balance                amount                 `json:"balance"`
+	Balance                Amount                 `json:"balance"`
 	Country                string                 `json:"country"`
 	Currency               string                 `json:"currency"`
-	DailyLimit             amount                 `json:"daily_limit"`
-	DailySpent             amount                 `json:"daily_spent"`
+	DailyLimit             Amount                 `json:"daily_limit"`
+	DailySpent             Amount                 `json:"daily_spent"`
 	Description            string                 `json:"description"`
 	PublicUUID             string                 `json:"public_uuid"`
 	Status                 string                 `json:"status"`
@@ -394,8 +394,8 @@ type MonetaryAccountSaving struct {
 	MonetaryAccountProfile monetaryAccountProfile `json:"monetary_account_profile"`
 	NotificationFilters    []notificationFilter   `json:"notification_filters"`
 	Setting                monetaryAccountSetting `json:"setting"`
-	OverdraftLimit         amount                 `json:"overdraft_limit"`
-	SavingsGoal            amount                 `json:"savings_goal"`
+	OverdraftLimit         Amount                 `json:"overdraft_limit"`
+	SavingsGoal            Amount                 `json:"savings_goal"`
 	SavingsGoalProgress    string                 `json:"savings_goal_progress"`
 }
 
@@ -407,7 +407,7 @@ func (s *MonetaryAccountSaving) GetIBANPointer() *Pointer {
 type Payment struct {
 	common
 	MonetaryAccountID            int                            `json:"monetary_account_id"`
-	Amount                       amount                         `json:"amount"`
+	Amount                       Amount                         `json:"Amount"`
 	Alias                        LabelMonetaryAccount           `json:"alias"`
 	CounterpartyAlias            LabelMonetaryAccount           `json:"counterparty_alias"`
 	Description                  string                         `json:"description"`
@@ -427,7 +427,7 @@ type Payment struct {
 	Geolocation                  geolocation                    `json:"geolocation"`
 	AllowChat                    bool                           `json:"allow_chat"`
 	RequestReferenceSplitTheBill []requestReferenceSplitTheBill `json:"request_reference_split_the_bill"`
-	BalanceAfterMutation         amount                         `json:"balance_after_mutation"`
+	BalanceAfterMutation         Amount                         `json:"balance_after_mutation"`
 }
 
 type bunqMe struct {

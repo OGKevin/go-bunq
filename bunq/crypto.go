@@ -11,7 +11,6 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
-	"sort"
 	"strings"
 
 	"github.com/pkg/errors"
@@ -43,7 +42,7 @@ func (c *Client) addSignatureHeader(r *http.Request) error {
 		return errors.Wrap(err, "bunq: could not get request body")
 	}
 
-	stringToSign := createStringToSign(r.Method, r.URL.RequestURI(), r.Header, body)
+	stringToSign := createStringToSign(body)
 	h := sha256.New()
 
 	_, err = h.Write([]byte(stringToSign))
@@ -65,7 +64,7 @@ func (c *Client) verifySignature(r *http.Response) (bool, error) {
 	bodyBytes, _ := ioutil.ReadAll(r.Body)
 	r.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
 
-	stringToVerify := createStringToVerify(r.StatusCode, r.Header, r.Body)
+	stringToVerify := createStringToVerify(r.Body)
 	r.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
 
 	h := sha256.New()
@@ -82,67 +81,21 @@ func (c *Client) verifySignature(r *http.Response) (bool, error) {
 	return err == nil, errors.Wrap(err, "bunq: request validation failed.")
 }
 
-func createStringToVerify(resCode int, allHeader http.Header, body io.ReadCloser) string {
+func createStringToVerify(body io.ReadCloser) string {
 	defer body.Close()
-	stringToVerify := fmt.Sprintf("%d\n", resCode)
-	stringToVerify += getAllHeaderToSignAsString(allHeader, false)
 
 	rawBody, _ := ioutil.ReadAll(body)
-	stringToVerify += "\n" + string(rawBody)
+	stringToVerify := string(rawBody)
 	stringToVerify = strings.TrimSuffix(stringToVerify, "\n")
 
 	return stringToVerify
 }
 
-func createStringToSign(method, path string, allHeader http.Header, body io.ReadCloser) string {
-	stringToSign := fmt.Sprintf("%s %s\n", method, path)
-	stringToSign += getAllHeaderToSignAsString(allHeader, true)
-
+func createStringToSign(body io.ReadCloser) string {
 	if body != nil {
 		defer body.Close()
 		rawBody, _ := ioutil.ReadAll(body)
-		stringToSign += fmt.Sprintf("\n%s", rawBody)
-	} else {
-		stringToSign += "\n"
+		return fmt.Sprintf("%s", rawBody)
 	}
-
-	return stringToSign
-}
-
-type header struct {
-	key, value string
-}
-
-// byKey implements sort.Interface for []header based on
-// the key field.
-type byKey []header
-
-func (a byKey) Len() int           { return len(a) }
-func (a byKey) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a byKey) Less(i, j int) bool { return a[i].key < a[j].key }
-
-func getAllHeaderToSignAsString(allHeader map[string][]string, includeCacheControll bool) string {
-	var allHeaderToSign []header
-
-	for key, allValue := range allHeader {
-		for _, value := range allValue {
-			if len(key) < 7 {
-				continue
-			}
-
-			if key != "X-Bunq-Server-Signature" && (key[:7] == "X-Bunq-" || key == "User-Agent" || (includeCacheControll && key == "Cache-Control")) {
-				allHeaderToSign = append(allHeaderToSign, header{key: key, value: value})
-			}
-		}
-	}
-
-	sort.Sort(byKey(allHeaderToSign))
-
-	var headerStringToSign string
-
-	for _, header := range allHeaderToSign {
-		headerStringToSign += header.key + ": " + header.value + "\n"
-	}
-
-	return headerStringToSign
+	return "\n"
 }

@@ -63,6 +63,14 @@ type responseMasterCardActionGet struct {
 	Pagination Pagination `json:"Pagination"`
 }
 
+// ResponseSchedulePaymentGet The schedule payment response object.
+type ResponseSchedulePaymentGet struct {
+	Response []struct {
+		SchedulePayment SchedulePayment `json:"ScheduledPayment"`
+	} `json:"Response"`
+	Pagination Pagination `json:"Pagination"`
+}
+
 type bunqError struct {
 	ErrorDescription           string `json:"error_description"`
 	ErrorDescriptionTranslated string `json:"error_description_translated"`

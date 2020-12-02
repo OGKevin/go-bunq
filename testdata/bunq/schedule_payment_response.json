@@ -1,0 +1,215 @@
+{
+  "Response": [
+    {
+      "ScheduledPayment": {
+        "id": 1,
+        "created": "2020-01-24 11:50:40.274435",
+        "updated": "2020-07-01 14:09:18.699516",
+        "monetary_account_id": 9601,
+        "schedule": {
+          "time_start": "2020-07-25 07:00:24.000000",
+          "time_end": null,
+          "recurrence_size": 1,
+          "recurrence_unit": "MONTHLY",
+          "time_next": "2020-12-25 08:00:24.000000"
+        },
+        "status": "ACTIVE",
+        "label_schedule_user_created": {
+          "uuid": "b981135d-6104-42a1-94b9-b6e6bbbddb47",
+          "display_name": "D. Licious",
+          "country": "NL",
+          "avatar": {
+            "uuid": "adf96714-5558-4cdc-9e92-c087c1c9fee5",
+            "image": [
+              {
+                "attachment_public_uuid": "182fcfe1-71b8-4d53-8e5e-2dfb54ddaf26",
+                "height": 768,
+                "width": 1024,
+                "content_type": "image/jpeg"
+              }
+            ],
+            "anchor_uuid": "f981135d-610f-42a1-94b9-b6e6bbbddb4f"
+          },
+          "public_nick_name": "Dli"
+        },
+        "label_schedule_user_canceled": null,
+        "payment": {
+          "amount": { "currency": "EUR", "value": "-4500.00" },
+          "alias": {
+            "iban": "NL85BUNQ9900100611",
+            "is_light": false,
+            "display_name": "D. Licious",
+            "avatar": {
+              "uuid": "1eee0285-fd66-492a-aa9e-bfc68d57a943",
+              "image": [
+                {
+                  "attachment_public_uuid": "5c3f1f4e-bff4-464c-b0b7-f6f58ae08444",
+                  "height": 400,
+                  "width": 400,
+                  "content_type": "image/jpeg"
+                }
+              ],
+              "anchor_uuid": null
+            },
+            "label_user": {
+              "uuid": "a981134d-6104-42a1-64b9-b6e6bbbddb47",
+              "display_name": "Disp. Licious",
+              "country": "NL",
+              "avatar": {
+                "uuid": "a1296714-5538-4cdc-9e90-c087c1c9fee5",
+                "image": [
+                  {
+                    "attachment_public_uuid": "a12fcfe1-71b8-4d53-8e5e-7dfb54ddaf27",
+                    "height": 768,
+                    "width": 1024,
+                    "content_type": "image/jpeg"
+                  }
+                ],
+                "anchor_uuid": "8971135d-6104-42a1-94b9-b6e6bbbddb47"
+              },
+              "public_nick_name": "Dli"
+            },
+            "country": "NL"
+          },
+          "counterparty_alias": {
+            "iban": "NL31BUNQ2041307374",
+            "is_light": false,
+            "display_name": "Eva",
+            "avatar": {
+              "uuid": "120b4d21-1be8-41e1-9962-2d7945fd90cf",
+              "image": [
+                {
+                  "attachment_public_uuid": "66a11a3a-5482-4324-831b-6ce0ce3f90c5",
+                  "height": 400,
+                  "width": 400,
+                  "content_type": "image/jpeg"
+                }
+              ],
+              "anchor_uuid": null
+            },
+            "label_user": {
+              "uuid": null,
+              "display_name": "Eva",
+              "country": "NL",
+              "avatar": null,
+              "public_nick_name": "Eva"
+            },
+            "country": "NL"
+          },
+          "description": "",
+          "merchant_reference": null,
+          "type": "BUNQ",
+          "sub_type": "PAYMENT"
+        }
+      }
+    },
+    {
+      "ScheduledPayment": {
+        "id": 288373332,
+        "created": "2019-03-14 19:02:57.185413",
+        "updated": "2019-03-14 19:02:57.185413",
+        "monetary_account_id": 9601,
+        "schedule": {
+          "time_start": "2019-03-27 19:02:33.188000",
+          "time_end": null,
+          "recurrence_size": 1,
+          "recurrence_unit": "MONTHLY",
+          "time_next": "2020-12-27 19:02:33.000000"
+        },
+        "status": "ACTIVE",
+        "label_schedule_user_created": {
+          "uuid": "b981135d-6104-42a1-94b9-b6e6bbbddb47",
+          "display_name": "D. Licious",
+          "country": "NL",
+          "avatar": {
+            "uuid": "aaf96714-5538-4cdc-9e90-c087c1c9fee5",
+            "image": [
+              {
+                "attachment_public_uuid": "b32fcfe1-73b8-4453-8e5e-7dfb543daf27",
+                "height": 768,
+                "width": 1024,
+                "content_type": "image/jpeg"
+              }
+            ],
+            "anchor_uuid": "b981138d-6104-42a1-84b9-b6e6bb8ddb48"
+          },
+          "public_nick_name": "Dli"
+        },
+        "label_schedule_user_canceled": null,
+        "payment": {
+          "amount": { "currency": "EUR", "value": "-261.33" },
+          "alias": {
+            "iban": "NL85BUNQ9900100611",
+            "is_light": false,
+            "display_name": "D. Licious",
+            "avatar": {
+              "uuid": "0eee3485-fd66-492a-aa9e-bfc68d57a94b",
+              "image": [
+                {
+                  "attachment_public_uuid": "093f184e-bff4-464c-b0b7-f6f328ae0441",
+                  "height": 400,
+                  "width": 400,
+                  "content_type": "image/jpeg"
+                }
+              ],
+              "anchor_uuid": null
+            },
+            "label_user": {
+              "uuid": "765435d-6104-42a1-94b9-b6e6bbbddb47",
+              "display_name": "D. Licious",
+              "country": "NL",
+              "avatar": {
+                "uuid": "cdf90987-5538-4cdc-9e90-c087c1c9fee5",
+                "image": [
+                  {
+                    "attachment_public_uuid": "982fcfe1-71b8-4d53-3333-7dfb54ddaf27",
+                    "height": 768,
+                    "width": 1024,
+                    "content_type": "image/jpeg"
+                  }
+                ],
+                "anchor_uuid": "b981135d-4509-42a1-94b9-b6e6bbbddb47"
+              },
+              "public_nick_name": "Dli"
+            },
+            "country": "NL"
+          },
+          "counterparty_alias": {
+            "iban": "NL02ABNA0123456789",
+            "is_light": null,
+            "display_name": "De Wild A.A.",
+            "avatar": {
+              "uuid": "abf4c4a5-b9be-4738-b768-e115b4c23069",
+              "image": [
+                {
+                  "attachment_public_uuid": "74ac1a57-e4dc-4108-b6c2-2c993a4f58e5",
+                  "height": 640,
+                  "width": 640,
+                  "content_type": "image/jpeg"
+                }
+              ],
+              "anchor_uuid": null
+            },
+            "label_user": {
+              "uuid": null,
+              "display_name": "De Wild A.A.",
+              "country": "NL",
+              "avatar": null,
+              "public_nick_name": "De Wild A.A."
+            },
+            "country": "NL"
+          },
+          "description": "Yes",
+          "merchant_reference": null,
+          "type": "BUNQ",
+          "sub_type": "PAYMENT"
+        }
+      }
+    }
+  ],
+  "Pagination": {
+    "future_url": "/v1/user/1432442/monetary-account/9601/schedule-payment?count=200&newer_id=196413",
+    "newer_url": null,
+    "older_url": null
+  }
+}

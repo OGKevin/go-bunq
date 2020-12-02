@@ -18,7 +18,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 )
 
 const (
@@ -62,9 +62,9 @@ type Client struct {
 	*http.Client
 	ctx context.Context
 
-	baseURL string
-	apiKey  string
-	Debug   bool
+	baseURL     string
+	apiKey      string
+	Debug       bool
 	description string
 
 	Err error
@@ -537,6 +537,8 @@ func (c *Client) GetUserID() (int, error) {
 		return c.sessionServerContext.UserPerson.ID, nil
 	} else if c.isUserCompany {
 		return c.sessionServerContext.UserCompany.ID, nil
+	} else if c.isUserAPIkey {
+		return c.sessionServerContext.UserAPIKey.ID, nil
 	}
 
 	return 0, fmt.Errorf("bunq: could not determine user id")

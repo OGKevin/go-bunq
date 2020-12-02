@@ -17,8 +17,6 @@ import (
 	"os"
 	"sync"
 	"testing"
-
-	"github.com/satori/go.uuid"
 )
 
 const errorRequestToUnMockedHTTPMethod = "request made to an un mocked http method. url: %q method: %q"
@@ -198,14 +196,8 @@ func formatFilePathByName(fileName string) string {
 }
 
 func sendResponseWithSignature(t *testing.T, w http.ResponseWriter, resCode int, body interface{}) {
-	w.Header().Set("X-Bunq-Client-Response-Id", uuid.NewV4().String())
-	w.Header().Set("Cache-controll", fmt.Sprintf("max-age=%s", uuid.NewV4().String()))
-	stringToSign := fmt.Sprintf("%d\n", resCode)
-	stringToSign += getAllHeaderToSignAsString(w.Header(), false)
-
 	b, _ := json.Marshal(body)
-
-	stringToSign += fmt.Sprintf("\n%s", b)
+	stringToSign := fmt.Sprintf("%s", b)
 
 	h := sha256.New()
 	_, _ = h.Write([]byte(stringToSign))

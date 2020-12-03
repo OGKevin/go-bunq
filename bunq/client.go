@@ -88,16 +88,16 @@ type Client struct {
 	installationContext  *installation
 	sessionServerContext *sessionServer
 
-	common                 service
-	installation           *installationService
-	deviceServer           *deviceServerService
-	sessionServer          *sessionServerService
-	UserService            *userService
-	AccountService         *accountService
-	PaymentService         *paymentService
-	SchedulePaymentService *schedulePaymentService
-	CardService            *cardService
-	ContentService         *contentService
+	common                  service
+	installation            *installationService
+	deviceServer            *deviceServerService
+	sessionServer           *sessionServerService
+	UserService             *userService
+	AccountService          *accountService
+	PaymentService          *paymentService
+	ScheduledPaymentService *scheduledPaymentService
+	CardService             *cardService
+	ContentService          *contentService
 }
 
 // NewClientFromContext create a new bunq client from a saved client context.
@@ -169,7 +169,7 @@ func (c *Client) registerServices() {
 	c.sessionServer = (*sessionServerService)(&c.common)
 	c.UserService = (*userService)(&c.common)
 	c.PaymentService = (*paymentService)(&c.common)
-	c.SchedulePaymentService = (*schedulePaymentService)(&c.common)
+	c.ScheduledPaymentService = (*scheduledPaymentService)(&c.common)
 	c.AccountService = (*accountService)(&c.common)
 	c.CardService = (*cardService)(&c.common)
 	c.ContentService = (*contentService)(&c.common)

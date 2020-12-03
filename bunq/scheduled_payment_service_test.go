@@ -15,8 +15,8 @@ func TestScheduleListing(t *testing.T) {
 
 	assert.NoError(t, c.Init())
 
-	res, err := c.SchedulePaymentService.GetAllSchedulePayment(monetaryAccountID)
+	res, err := c.ScheduledPaymentService.GetAllScheduledPayments(monetaryAccountID)
 
 	assert.NoError(t, err)
-	assert.NotZero(t, res.Response[0].SchedulePayment.MonetaryAccountID)
+	assert.NotZero(t, res.Response[0].ScheduledPayment.MonetaryAccountID)
 }

@@ -68,7 +68,7 @@ func createBunqFakeHandler(t *testing.T) http.HandlerFunc {
 		case "user/6084/monetary-account/10111/payment", "user/7082/monetary-account/10111/payment", "user/6084/monetary-account/10111/payment/1":
 			sendResponseWithSignature(t, w, http.StatusOK, getPaymentGet(t))
 		case "user/6084/monetary-account/9601/schedule-payment":
-			sendResponseWithSignature(t, w, http.StatusOK, getSchedulePaymentGet(t))
+			sendResponseWithSignature(t, w, http.StatusOK, getScheduledPaymentGet(t))
 		case "attachment-public/f9a1a89a-fdc1-4de5-89d5-e477cccd22c4/content":
 			sendResponseWithSignature(t, w, http.StatusOK, getPaymentGet(t))
 		case "/v1/session/133912", "v1/session/133912", "session/133912":
@@ -172,11 +172,11 @@ func getPaymentGet(t *testing.T) *ResponsePaymentGet {
 	return res.(*ResponsePaymentGet)
 }
 
-func getSchedulePaymentGet(t *testing.T) *ResponseSchedulePaymentGet {
-	var obj ResponseSchedulePaymentGet
+func getScheduledPaymentGet(t *testing.T) *ResponseScheduledPaymentsGet {
+	var obj ResponseScheduledPaymentsGet
 	res := createResponseStruct(t, formatFilePathByName("schedule_payment_response"), &obj)
 
-	return res.(*ResponseSchedulePaymentGet)
+	return res.(*ResponseScheduledPaymentsGet)
 }
 
 func getErrorResponse(t *testing.T) *responseError {

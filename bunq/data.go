@@ -435,16 +435,16 @@ type PaymentBatch struct {
 	Payments []Payment `json:"payments"`
 }
 
-// SchedulePayment The schedule payment
-type SchedulePayment struct {
+// ScheduledPayment The scheduled payment
+type ScheduledPayment struct {
 	common
-	MonetaryAccountID int                  `json:"monetary_account_id"`
-	Payment           schedulePaymentEntry `json:"payment"`
-	Schedule          schedule             `json:"schedule"`
-	Status            string               `json:"status"`
+	MonetaryAccountID int                   `json:"monetary_account_id"`
+	Payment           scheduledPaymentEntry `json:"payment"`
+	Schedule          schedule              `json:"schedule"`
+	Status            string                `json:"status"`
 }
 
-type schedulePaymentEntry struct {
+type scheduledPaymentEntry struct {
 	Amount            Amount               `json:"amount"`
 	Alias             LabelMonetaryAccount `json:"alias"`
 	CounterpartyAlias LabelMonetaryAccount `json:"counterparty_alias"`

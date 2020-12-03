@@ -17,7 +17,7 @@ const (
 	endpointPaymentGet       string = "user/%d/monetary-account/%d/payment?count=200"
 	endpointPaymentGetWithID string = "user/%d/monetary-account/%d/payment/%d"
 
-	endpointSchedulePaymentGet string = "user/%d/monetary-account/%d/schedule-payment?count=200"
+	endpointScheduledPaymentGet string = "user/%d/monetary-account/%d/schedule-payment?count=200"
 
 	endpointMonetaryAccountBankListing string = "user/%d/monetary-account-bank"
 	endpointMonetaryAccountBankGet     string = "user/%d/monetary-account-bank/%d"

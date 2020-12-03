@@ -63,10 +63,10 @@ type responseMasterCardActionGet struct {
 	Pagination Pagination `json:"Pagination"`
 }
 
-// ResponseSchedulePaymentGet The schedule payment response object.
-type ResponseSchedulePaymentGet struct {
+// ResponseScheduledPaymentsGet The scheduled payments response object.
+type ResponseScheduledPaymentsGet struct {
 	Response []struct {
-		SchedulePayment SchedulePayment `json:"ScheduledPayment"`
+		ScheduledPayment ScheduledPayment `json:"ScheduledPayment"`
 	} `json:"Response"`
 	Pagination Pagination `json:"Pagination"`
 }

@@ -335,22 +335,22 @@ type Pagination struct {
 
 type masterCardAction struct {
 	common
-	MonetaryAccountID             int    `json:"monetary_account_id"`
-	CardID                        int    `json:"card_id"`
-	CardAuthorisationIDResponse   string `json:"card_authorisation_id_response"`
-	AmountLocal                   Amount `json:"amount_local"`
-	AmountConverted               Amount `json:"amount_converted"`
-	AmountBilling                 Amount `json:"amount_billing"`
-	AmountOriginalLocal           Amount `json:"amount_original_local"`
-	AmountOriginalBilling         Amount `json:"amount_original_billing"`
-	AmountFee                     Amount `json:"amount_fee"`
-	Decision                      string `json:"decision"`
-	DecisionDescription           string `json:"decision_description"`
-	DecisionDescriptionTranslated string `json:"decision_description_translated"`
-	Description                   string `json:"description"`
-	AuthorisationStatus           string `json:"authorisation_status"`
-	AuthorisationType             string `json:"authorisation_type"`
-	SettlementStatus              string `json:"settlement_status"`
+	MonetaryAccountID             int           `json:"monetary_account_id"`
+	CardID                        int           `json:"card_id"`
+	CardAuthorisationIDResponse   string        `json:"card_authorisation_id_response"`
+	AmountLocal                   Amount        `json:"amount_local"`
+	AmountConverted               Amount        `json:"amount_converted"`
+	AmountBilling                 Amount        `json:"amount_billing"`
+	AmountOriginalLocal           Amount        `json:"amount_original_local"`
+	AmountOriginalBilling         Amount        `json:"amount_original_billing"`
+	AmountFee                     Amount        `json:"amount_fee"`
+	Decision                      string        `json:"decision"`
+	DecisionDescription           string        `json:"decision_description"`
+	DecisionDescriptionTranslated string        `json:"decision_description_translated"`
+	Description                   string        `json:"description"`
+	AuthorisationStatus           string        `json:"authorisation_status"`
+	AuthorisationType             string        `json:"authorisation_type"`
+	SettlementStatus              string        `json:"settlement_status"`
 	City                          string        `json:"city"`
 	Alias                         labelUser     `json:"alias"`
 	CounterpartyAlias             labelUser     `json:"counterparty_alias"`
@@ -363,7 +363,7 @@ type masterCardAction struct {
 	SecureCodeID                  int           `json:"secure_code_id"`
 	WalletProviderID              string        `json:"wallet_provider_id"`
 	RequestReferenceSplitTheBill  []interface{} `json:"request_reference_split_the_bill"`
-	AppliedLimit                  string `json:"applied_limit"`
+	AppliedLimit                  string        `json:"applied_limit"`
 }
 
 type labelCard struct {
@@ -428,6 +428,43 @@ type Payment struct {
 	AllowChat                    bool                           `json:"allow_chat"`
 	RequestReferenceSplitTheBill []requestReferenceSplitTheBill `json:"request_reference_split_the_bill"`
 	BalanceAfterMutation         Amount                         `json:"balance_after_mutation"`
+}
+
+// PaymentBatch a batch of payments
+type PaymentBatch struct {
+	Payments []Payment `json:"payments"`
+}
+
+// ScheduledPayment The scheduled payment
+type ScheduledPayment struct {
+	common
+	MonetaryAccountID int                   `json:"monetary_account_id"`
+	Payment           scheduledPaymentEntry `json:"payment"`
+	Schedule          schedule              `json:"schedule"`
+	Status            string                `json:"status"`
+}
+
+type scheduledPaymentEntry struct {
+	Amount            Amount               `json:"amount"`
+	Alias             LabelMonetaryAccount `json:"alias"`
+	CounterpartyAlias LabelMonetaryAccount `json:"counterparty_alias"`
+	Description       string               `json:"description"`
+	MerchantReference string               `json:"merchant_reference"`
+	AllowBunqTo       bool                 `json:"allow_bunqto"`
+}
+
+type schedule struct {
+	TimeStart      string               `json:"time_start"`
+	TimeEnd        string               `json:"time_end"`
+	RecurrenceUnit string               `json:"recurrence_unit"`
+	RecurrenceSize int                  `json:"recurrence_size"`
+	Status         string               `json:"status"`
+	Object         scheduleAnchorObject `json:"object"`
+}
+
+type scheduleAnchorObject struct {
+	Payment      Payment      `json:"payment"`
+	PaymentBatch PaymentBatch `json:"paymentBatch"`
 }
 
 type bunqMe struct {

@@ -489,3 +489,18 @@ type requestReferenceSplitTheBill struct {
 	Type string `json:"type"`
 	ID   int    `json:"id"`
 }
+
+type RequestResponse struct {
+	common
+	SubType           string               `json:"sub_type"`
+	MonetaryAccountID int                  `json:"monetary_account_id"`
+	Amount            Amount               `json:"Amount"`
+	AmountResponded   Amount               `json:"amount_responded"`
+	AmountInquired    Amount               `json:"amount_inquired"`
+	Alias             LabelMonetaryAccount `json:"alias"`
+	CounterpartyAlias LabelMonetaryAccount `json:"counterparty_alias"`
+	Description       string               `json:"description"`
+	CreditSchemeID    string               `json:"credit_scheme_identifier"`
+	MandateID         string               `json:"mandate_identifier"`
+	Responded         string               `json:"time_responded"`
+}

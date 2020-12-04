@@ -98,6 +98,7 @@ type Client struct {
 	ScheduledPaymentService *scheduledPaymentService
 	CardService             *cardService
 	ContentService          *contentService
+	RequestResponseService  *requestResponseService
 }
 
 // NewClientFromContext create a new bunq client from a saved client context.
@@ -173,6 +174,7 @@ func (c *Client) registerServices() {
 	c.AccountService = (*accountService)(&c.common)
 	c.CardService = (*cardService)(&c.common)
 	c.ContentService = (*contentService)(&c.common)
+	c.RequestResponseService = (*requestResponseService)(&c.common)
 
 	c.spawnRequestHandlerWorker()
 }

@@ -26,4 +26,6 @@ const (
 	endpointMonetaryAccountSavingsGet     string = "user/%d/monetary-account-savings/%d"
 
 	endpointMasterCardActionGet string = "user/%d/monetary-account/%d/mastercard-action/%d"
+
+	endpointRequestResponsesGet string = "user/%d/monetary-account/%d/request-response"
 )

@@ -75,3 +75,10 @@ type bunqError struct {
 	ErrorDescription           string `json:"error_description"`
 	ErrorDescriptionTranslated string `json:"error_description_translated"`
 }
+
+type ResponseRequestResponsesGet struct {
+	Response []struct {
+		RequestResponse RequestResponse `json:"RequestResponse"`
+	} `json:"Response"`
+	Pagination Pagination `json:"Pagination"`
+}

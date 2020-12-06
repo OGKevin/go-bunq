@@ -1,0 +1,169 @@
+{
+  "Response": [
+    {
+      "RequestResponse": {
+        "id": 45813785,
+        "created": "2020-11-24 15:09:56.102879",
+        "updated": "2020-11-24 15:10:16.279777",
+        "time_responded": "2020-11-24 15:10:16.274846",
+        "time_expiry": null,
+        "monetary_account_id": 333333,
+        "amount_inquired": { "currency": "EUR", "value": "596.82" },
+        "amount_responded": { "currency": "EUR", "value": "596.82" },
+        "status": "ACCEPTED",
+        "description": "20.11.0085",
+        "alias": {
+          "iban": "NL12BUNQ2034506991",
+          "is_light": false,
+          "display_name": "S. Woutje",
+          "avatar": {
+            "uuid": "5952a575-d75a-4a0c-9bbe-ce5e231cc811",
+            "image": [
+              {
+                "attachment_public_uuid": "62da66f0-76b5-4e2b-841d-7357650d5d42",
+                "height": 400,
+                "width": 400,
+                "content_type": "image/jpeg"
+              }
+            ],
+            "anchor_uuid": null
+          },
+          "label_user": {
+            "uuid": "b981125d-6104-42a1-94b1-b6e6bbbddb47",
+            "display_name": "S. Woutje",
+            "country": "NL",
+            "avatar": {
+              "uuid": "cdf96714-5538-4cdc-9e90-c087c1c9fee5",
+              "image": [
+                {
+                  "attachment_public_uuid": "182fcfe1-71b8-4d53-8e5e-7dfb545daf27",
+                  "height": 768,
+                  "width": 1024,
+                  "content_type": "image/jpeg"
+                }
+              ],
+              "anchor_uuid": "1981335d-6104-42a1-941b9-b6e6bbbddb47"
+            },
+            "public_nick_name": "Gert"
+          },
+          "country": "NL"
+        },
+        "counterparty_alias": {
+          "iban": null,
+          "is_light": null,
+          "display_name": "AH",
+          "label_user": {
+            "uuid": null,
+            "display_name": "AH",
+            "country": "NL",
+            "avatar": null,
+            "public_nick_name": "AH"
+          },
+          "avatar": null,
+          "country": "NL"
+        },
+        "attachment": null,
+        "minimum_age": null,
+        "require_address": null,
+        "geolocation": {
+          "latitude": 51.113232000000004,
+          "longitude": 5.081442,
+          "altitude": 24.599997999999999,
+          "radius": 14.999000000000001
+        },
+        "type": "IDEAL",
+        "sub_type": "ONCE",
+        "redirect_url": "https://ideal.bunq.com/index.html?authorisationId=112306814957&transactionId=7050009028489631",
+        "address_billing": null,
+        "address_shipping": null,
+        "eligible_whitelist_id": null,
+        "request_reference_split_the_bill": []
+      }
+    },
+    {
+      "RequestResponse": {
+        "id": 45399757,
+        "created": "2020-11-17 12:43:38.444834",
+        "updated": "2020-11-17 12:43:47.383770",
+        "time_responded": "2020-11-17 12:43:47.379860",
+        "time_expiry": null,
+        "monetary_account_id": 333333,
+        "amount_inquired": { "currency": "EUR", "value": "668.75" },
+        "amount_responded": { "currency": "EUR", "value": "668.75" },
+        "status": "ACCEPTED",
+        "description": "20.11.0057",
+        "alias": {
+          "iban": "NL12BUNQ2034506991",
+          "is_light": false,
+          "display_name": "S. Woutje",
+          "avatar": {
+            "uuid": "2932a575-d75a-4a0c-95be-ce6e231cc811",
+            "image": [
+              {
+                "attachment_public_uuid": "62da46f0-76b5-4e2b-841d-7327650d5d42",
+                "height": 400,
+                "width": 400,
+                "content_type": "image/jpeg"
+              }
+            ],
+            "anchor_uuid": null
+          },
+          "label_user": {
+            "uuid": "b981135d-6104-4211-94b9-b6e6bbbdd237",
+            "display_name": "S. Woutje",
+            "country": "NL",
+            "avatar": {
+              "uuid": "cdf46714-5538-43dc-9e90-c37c1c9fee5",
+              "image": [
+                {
+                  "attachment_public_uuid": "932fcfe1-71b8-4d53-8e5e-74fb54ddaf27",
+                  "height": 768,
+                  "width": 1024,
+                  "content_type": "image/jpeg"
+                }
+              ],
+              "anchor_uuid": "b981335d-6104-42a1-94b9-b6e64bbddb47"
+            },
+            "public_nick_name": "Gert"
+          },
+          "country": "NL"
+        },
+        "counterparty_alias": {
+          "iban": null,
+          "is_light": null,
+          "display_name": "AH",
+          "label_user": {
+            "uuid": null,
+            "display_name": "AH",
+            "country": "NL",
+            "avatar": null,
+            "public_nick_name": "AH"
+          },
+          "avatar": null,
+          "country": "NL"
+        },
+        "attachment": null,
+        "minimum_age": null,
+        "require_address": null,
+        "geolocation": {
+          "latitude": 51.113242999999997,
+          "longitude": 2.0814240000000002,
+          "altitude": 42.599997999999999,
+          "radius": 11.146000000000001
+        },
+        "type": "IDEAL",
+        "sub_type": "ONCE",
+        "redirect_url": "https://ideal.bunq.com/index.html?authorisationId=683336191504&transactionId=1050001228971583",
+        "address_billing": null,
+        "address_shipping": null,
+        "eligible_whitelist_id": null,
+        "request_reference_split_the_bill": []
+      }
+    }
+  ],
+  "Pagination": {
+    "future_url": "",
+    "newer_url": null,
+    "older_url": "/v1/user/6084/monetary-account/9999/request-response"
+  }
+}

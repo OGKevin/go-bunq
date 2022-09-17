@@ -41,7 +41,7 @@ type PaymentBatchCreate struct {
 }
 
 type PaymentCreate struct {
-	Amount            Amount  `json:"Amount"`
+	Amount            Amount  `json:"amount"`
 	CounterpartyAlias Pointer `json:"counterparty_alias"`
 	Description       string  `json:"description"`
 	AllowBunqto       bool    `json:"allow_bunqto"`

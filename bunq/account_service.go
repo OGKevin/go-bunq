@@ -56,6 +56,22 @@ func (a *accountService) GetAllMonetaryAccountSaving() (*ResponseMonetaryAccount
 	return &resStruct, a.client.parseResponse(res, &resStruct)
 }
 
+func (a *accountService) GetAllMonetaryAccountJoint() (*ResponseMonetaryAccountJointGet, error) {
+	userID, err := a.client.GetUserID()
+	if err != nil {
+		return nil, err
+	}
+
+	res, err := a.client.preformRequest(http.MethodGet, a.client.formatRequestURL(fmt.Sprintf(endpointMonetaryAccountJointListing, userID)), nil)
+	if err != nil {
+		return nil, errors.Wrap(err, "bunq: request to get all MA joint failed")
+	}
+
+	var resStruct ResponseMonetaryAccountJointGet
+
+	return &resStruct, a.client.parseResponse(res, &resStruct)
+}
+
 func (a *accountService) GetMonetaryAccountSaving(id int) (*ResponseMonetaryAccountSavingGet, error) {
 	userID, err := a.client.GetUserID()
 	if err != nil {

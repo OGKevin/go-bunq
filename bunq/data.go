@@ -375,6 +375,42 @@ type labelCard struct {
 	LabelUser  labelUser `json:"label_user"`
 }
 
+// MonetaryAccountJoint represents the structure for a joint monetary account.
+type MonetaryAccountJoint struct {
+	common
+	Avatar                 avatar                 `json:"avatar"`
+	Currency               string                 `json:"currency"`
+	Description            string                 `json:"description"`
+	DailyLimit             Amount                 `json:"daily_limit"`
+	OverdraftLimit         Amount                 `json:"overdraft_limit"`
+	Balance                Amount                 `json:"balance"`
+	Alias                  []Pointer              `json:"alias"`
+	PublicUUID             string                 `json:"public_uuid"`
+	Status                 string                 `json:"status"`
+	SubStatus              string                 `json:"sub_status"`
+	Reason                 string                 `json:"reason"`
+	ReasonDescription      string                 `json:"reason_description"`
+	AllCoOwner             []CoOwner              `json:"all_co_owner"`
+	UserID                 int                    `json:"user_id"`
+	MonetaryAccountProfile monetaryAccountProfile `json:"monetary_account_profile"`
+	Setting                monetaryAccountSetting `json:"setting"`
+}
+
+// CoOwner represents the co-owner of a joint monetary account.
+type CoOwner struct {
+	Alias  LabelUser `json:"alias"`  // Assuming LabelUser is another struct defined based on its schema
+	Status string    `json:"status"` // Status can be: ACCEPTED, REJECTED, PENDING, or REVOKED
+}
+
+// LabelUser represents the label user structure in the BUNQ API.
+type LabelUser struct {
+	UUID           string `json:"uuid"`
+	DisplayName    string `json:"display_name"`
+	Country        string `json:"country"`
+	Avatar         avatar `json:"avatar"`
+	PublicNickName string `json:"public_nick_name"`
+}
+
 // MonetaryAccountSaving The monetary account saving.
 type MonetaryAccountSaving struct {
 	common

@@ -34,6 +34,14 @@ type ResponseMonetaryAccountBankGet struct {
 	Pagination Pagination `json:"Pagination"`
 }
 
+// ResponseMonetaryAccountJointGet The monetary account joint response object.
+type ResponseMonetaryAccountJointGet struct {
+	Response []struct {
+		MonetaryAccountJoint MonetaryAccountJoint `json:"MonetaryAccountJoint"`
+	} `json:"Response"`
+	Pagination Pagination `json:"Pagination"`
+}
+
 // ResponseMonetaryAccountSavingGet The monetary account savings response object.
 type ResponseMonetaryAccountSavingGet struct {
 	Response []struct {

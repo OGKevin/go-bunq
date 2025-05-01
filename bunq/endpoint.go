@@ -19,10 +19,10 @@ const (
 
 	endpointScheduledPaymentGet string = "user/%d/monetary-account/%d/schedule-payment?count=200"
 
-	endpointMonetaryAccountBankListing string = "user/%d/monetary-account-bank"
+	endpointMonetaryAccountBankListing string = "user/%d/monetary-account-bank?count=200"
 	endpointMonetaryAccountBankGet     string = "user/%d/monetary-account-bank/%d"
 
-	endpointMonetaryAccountSavingsListing string = "user/%d/monetary-account-savings"
+	endpointMonetaryAccountSavingsListing string = "user/%d/monetary-account-savings?count=200"
 	endpointMonetaryAccountSavingsGet     string = "user/%d/monetary-account-savings/%d"
 
 	endpointMasterCardActionGet string = "user/%d/monetary-account/%d/mastercard-action/%d"

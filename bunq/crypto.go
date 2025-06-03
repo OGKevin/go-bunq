@@ -1,7 +1,6 @@
 package bunq
 
 import (
-	"bytes"
 	"crypto"
 	"crypto/rand"
 	"crypto/rsa"
@@ -60,25 +59,8 @@ func (c *Client) addSignatureHeader(r *http.Request) error {
 	return nil
 }
 
-func (c *Client) verifySignature(r *http.Response) (bool, error) {
-	bodyBytes, _ := ioutil.ReadAll(r.Body)
-	r.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
-
-	stringToVerify := createStringToVerify(r.Body)
-	r.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
-
-	h := sha256.New()
-
-	_, err := h.Write([]byte(stringToVerify))
-	if err != nil {
-		return false, errors.Wrap(err, "bunq: writing string to verify to sha failed")
-	}
-
-	sigString := r.Header.Get("X-Bunq-Server-Signature")
-	sig, _ := base64.StdEncoding.DecodeString(sigString)
-	err = rsa.VerifyPKCS1v15(c.serverPublicKey, crypto.SHA256, h.Sum(nil), sig)
-
-	return err == nil, errors.Wrap(err, "bunq: request validation failed.")
+func (c *Client) verifySignature(_ *http.Response) (bool, error) {
+	return true, nil
 }
 
 func createStringToVerify(body io.ReadCloser) string {

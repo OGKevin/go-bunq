@@ -25,6 +25,8 @@ const (
 	endpointMonetaryAccountSavingsListing string = "user/%d/monetary-account-savings?count=200"
 	endpointMonetaryAccountSavingsGet     string = "user/%d/monetary-account-savings/%d"
 
+	endpointMonetaryAccountJointListing string = "/user/%d/monetary-account-joint"
+
 	endpointMasterCardActionGet string = "user/%d/monetary-account/%d/mastercard-action/%d"
 
 	endpointRequestResponsesGet string = "user/%d/monetary-account/%d/request-response"

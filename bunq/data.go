@@ -157,7 +157,7 @@ type cardLimits struct {
 }
 
 type customer struct {
-	BillingAccountID              string `json:"billing_account_id"`
+	BillingAccountID              int    `json:"billing_account_id"`
 	InvoiceNotificationPreference string `json:"invoice_notification_preference"`
 	ID                            int    `json:"id"`
 	Created                       string `json:"created"`
